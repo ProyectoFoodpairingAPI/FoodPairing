@@ -105,12 +105,12 @@ public class CountriesController implements Initializable {
 
     @FXML
     public void tableViewMouseClicked(MouseEvent event) {
-        // TODO If the user double click, call API to get the information about the selected country
         if (event.getClickCount() == 2) {
             Country selectedCountry = dataTable.getSelectionModel().getSelectedItem();
-            // Only for test purpose
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("You have selected " + selectedCountry.getName());
+            alert.setTitle(selectedCountry.getName());
+            alert.setHeaderText(selectedCountry.getName());
+            alert.setContentText("Region:  " + selectedCountry.getRegion() + "\nSubregión: " + selectedCountry.getSubregion() +"\nPopulation: " + selectedCountry.getPopulation());
             alert.show();
         }
     }
