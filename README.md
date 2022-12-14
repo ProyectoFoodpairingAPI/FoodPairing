@@ -15,3 +15,7 @@ Hemos creado una GUI con JavaFX que muestra el listado de países que nos propor
 Esta aplicación nos permite filtrar los países según el nombre, la región o la subregión:
 
 ![paisesSearch](https://user-images.githubusercontent.com/98825807/207546310-e6ce8710-9018-49ca-8fdf-a648cff34680.png)
+
+Si clickamos en un país podemos ver la información:
+
+![paisesInfo](https://user-images.githubusercontent.com/98825807/207551980-1cbc0b06-ed7e-4376-b1bd-d589924073a9.png)
