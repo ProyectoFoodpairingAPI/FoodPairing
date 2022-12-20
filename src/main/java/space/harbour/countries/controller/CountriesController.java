@@ -111,7 +111,7 @@ public class CountriesController implements Initializable {
         new Thread(dataTask).start();
     }
 
-    @FXML
+  /*  @FXML
     public void tableViewMouseClicked(MouseEvent event) {
         if (event.getClickCount() == 2) {
             Country selectedCountry = dataTable.getSelectionModel().getSelectedItem();
@@ -123,8 +123,9 @@ public class CountriesController implements Initializable {
         }
     }
 
-  /* @FXML
-    public void ventanadosClicked(MouseEvent event){ //Metodo para conectar las dos ventanas
+  */
+  @FXML
+    public void tableViewMouseClicked(MouseEvent event){ //Metodo para conectar las dos ventanas
         if(event.getClickCount() == 3){
             Country selectedCountry = dataTable.getSelectionModel().getSelectedItem();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/resources/ui/Comida.fxml"));
@@ -142,7 +143,7 @@ public class CountriesController implements Initializable {
             }
 
         }
-    }*/
+    }
 
 
 }
