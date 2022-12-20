@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class FoodController implements Initializable{
+public class FoodController extends CountriesController implements Initializable {
 
     public TextField nameCountry;
     public TextField regionCountry;
