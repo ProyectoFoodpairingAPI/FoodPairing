@@ -27,10 +27,17 @@ public abstract class GetURLfoodFacts{
         //junto a esto hay que enviar un json con los parametros de busqueda
         return url;
     }
+    //ejemplo hardcodeado de como se envia el json
+    public String getUrlSearch2(){
+        String url = "https://world.openfoodfacts.org/cgi/search.pl?categories_tags_en=chocolates";
+        //junto a esto hay que enviar un json con los parametros de busqueda
+        return url;
+    }
+    /*
     public JsonObject getJsonSearch(){
         Gson g = new Gson();
         JsonObject json = g.fromJson("categories_tags_en=pizza", JsonObject.class);
         //json con los parametros de busqueda
         return json;
-    }
+    }*/
 }
