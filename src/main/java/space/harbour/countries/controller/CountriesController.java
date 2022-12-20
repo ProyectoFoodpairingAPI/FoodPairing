@@ -29,10 +29,13 @@ public class CountriesController implements Initializable {
     public Label statusLabel;
     public ProgressBar progressBar;
 
+    private Stage stage;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         prepareTableView();
         loadData();
+
     }
 
     private void loadData() {
@@ -122,7 +125,7 @@ public class CountriesController implements Initializable {
 
    /** @FXML
     public void ventanadosClicked(MouseEvent event){ //Metodo para conectar las dos ventanas
-        if(event.getClickCount() == 2){
+        if(event.getClickCount() == 3){
             Country selectedCountry = dataTable.getSelectionModel().getSelectedItem();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/resources/ui/Comida.fxml"));
             try {
@@ -131,7 +134,9 @@ public class CountriesController implements Initializable {
                 Scene scene = new Scene(root);
                 Stage stage = new Stage();
                 stage.setScene(scene);
-
+                controller.init(selectedCountry.getName(), selectedCountry.getRegion(), selectedCountry.getSubregion(), selectedCountry.getPopulation(), stage, this );
+                stage.show();
+                stage.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

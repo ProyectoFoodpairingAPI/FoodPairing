@@ -35,16 +35,5 @@ public class FoodService {
         return null;
     }
 
-    //No se necesita no buscamos comida borrar luego
-   /** public List<Country> getCountries(String searchText) {
-        Call<List<Country>> countriesCall = api.getCountry(searchText);
-        try {
-            Response<List<Country>> response = countriesCall.execute();
-            return response.body();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        }
 
-        return null;
-    }**/
 }

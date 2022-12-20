@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import space.harbour.countries.domain.Country;
 import space.harbour.countries.domain.Food;
 import space.harbour.countries.task.DataTaskFood;
@@ -26,30 +27,31 @@ public class FoodController extends CountriesController implements Initializable
     public TableView<Food> dataTableFood;
     public ProgressBar progressBar;
 
+    private CountriesController countriesController;
+    private Stage stage;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        prepareText();
         prepareTableView();
         loadDataFood(); //Crear clase para leer los datos de comida
-
     }
 
-    private void prepareText(Country c1) {
+    public void init(String name, String region, String subregion, int population, Stage stage, CountriesController countriesController) {
         String nameCountryText = nameCountry.getText();
-        nameCountryText= c1.getName();
+        nameCountryText=name;
         String regionText= regionCountry.getText();
-        regionText=c1.getRegion();
+        regionText=region;
         String subregText = subregionCountry.getText();
-        subregText=c1.getSubregion();
+        subregText=subregion;
         String populationText= PopulationCountry.getText();
-        populationText= String.valueOf(c1.getPopulation());
+        populationText= String.valueOf(population);
 
     }
 
     private void loadDataFood(){
         progressBar.setVisible(true);
         DataTaskFood dataTaskFood=new DataTaskFood();
-        dataTaskFood.addEventHandker(WorkerStateEvent.WORKER_STATE_SUCCEEDED, workerStateEvent -> {
+        dataTaskFood.addEventHandler(WorkerStateEvent.WORKER_STATE_SUCCEEDED, workerStateEvent -> {
             progressBar.setVisible(false);
             List<Food> foodList= dataTaskFood.getValue();
             dataTableFood.setItems(FXCollections.observableArrayList(foodList));
@@ -71,4 +73,6 @@ public class FoodController extends CountriesController implements Initializable
             }
         });
     }
+
+
 }

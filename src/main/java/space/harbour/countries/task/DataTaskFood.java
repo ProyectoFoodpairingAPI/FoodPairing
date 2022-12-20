@@ -14,9 +14,6 @@ public class DataTaskFood extends Task<List<Food>> {
     }
 
 
-    public void addEventHandker(EventType<WorkerStateEvent> workerStateSucceeded, Object o) {
-    }
-
     @Override
     protected List<Food> call() throws Exception {
         FoodService foodService= new FoodService();
