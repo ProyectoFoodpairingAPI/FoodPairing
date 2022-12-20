@@ -1,5 +1,10 @@
 package space.harbour.countries.domain;
 
+import lombok.Data;
+import lombok.ToString;
+
+@Data
+@ToString
 public class Food {
     String id;
     String name;

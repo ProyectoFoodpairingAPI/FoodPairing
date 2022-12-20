@@ -16,7 +16,7 @@ public class FoodService {
 
     public FoodService() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://world.openfoodfacts.org/api/v0/product/")
+                .baseUrl("https://world.openfoodfacts.org/cgi/search.pl?")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -27,6 +27,18 @@ public class FoodService {
         Call<List<Food>> allFoodCall = api.getAllFood();
         try {
             Response<List<Food>> response = allFoodCall.execute();
+            return response.body();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public List<Food> getFoodCategory(String Category) {
+        Call<List<Food>> foodCall = api.getCategory(Category);
+        try {
+            Response<List<Food>> response = foodCall.execute();
             return response.body();
         } catch (IOException ioe) {
             ioe.printStackTrace();
