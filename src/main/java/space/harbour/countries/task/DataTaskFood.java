@@ -20,7 +20,7 @@ public class DataTaskFood extends Task<List<Food>> {
     protected List<Food> call() throws Exception {
         FoodService foodService= new FoodService();
 
-            return foodService.getAllFood();
+            return foodService.getFoodCategory("pizza");
 
     }
 

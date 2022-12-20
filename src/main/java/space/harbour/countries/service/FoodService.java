@@ -1,5 +1,6 @@
 package space.harbour.countries.service;
 
+import lombok.extern.java.Log;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
@@ -26,6 +27,7 @@ public class FoodService {
 
     public List<Food> getAllFood() {
         Call<List<Food>> allFoodCall = api.getAllFood();
+        System.out.println(allFoodCall.request().url());
         try {
             Response<List<Food>> response = allFoodCall.execute();
             return response.body();
@@ -38,6 +40,7 @@ public class FoodService {
 
     public List<Food> getFoodCategory(String Category) {
         Call<List<Food>> foodCall = api.getCategory(Category);
+        System.out.println(foodCall);
         try {
             Response<List<Food>> response = foodCall.execute();
             return response.body();
