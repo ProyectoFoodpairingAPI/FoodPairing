@@ -13,12 +13,14 @@ import java.util.List;
 public class DataTaskFood extends Task<List<Food>> {
 
     public DataTaskFood(){
+
     }
 
 
     @Override
     protected List<Food> call() throws Exception {
         FoodService foodService= new FoodService();
+            System.out.println("FoodService call lanzado");
 
             return foodService.getFoodCategory("pizza");
 

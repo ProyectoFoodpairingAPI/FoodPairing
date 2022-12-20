@@ -34,6 +34,7 @@ public class FoodController extends CountriesController implements Initializable
     public void initialize(URL url, ResourceBundle resourceBundle) {
         prepareTableView();
         loadDataFood(); //Crear clase para leer los datos de comida
+        System.out.println("FoodController initialize terminado");
     }
 
     public void init(String name, String region, String subregion, int population, Stage stage, CountriesController countriesController) {
