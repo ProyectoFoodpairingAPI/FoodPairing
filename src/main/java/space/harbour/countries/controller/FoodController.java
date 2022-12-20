@@ -62,7 +62,19 @@ public class FoodController extends CountriesController implements Initializable
     private void prepareTableView(){
         TableColumn<Food, String> nameColumn = new TableColumn<>("Food Name");
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        TableColumn<Food, String> idColumn = new TableColumn<>("Id name");
+        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+        TableColumn<Food, String> marcaColumn = new TableColumn<>("Marca");
+        marcaColumn.setCellValueFactory(new PropertyValueFactory<>("marca"));
+        TableColumn<Food, String> categoryColumn = new TableColumn<>("Category");
+        categoryColumn.setCellValueFactory(new PropertyValueFactory<>("category"));
+
         dataTableFood.getColumns().add(nameColumn);
+        dataTableFood.getColumns().add(idColumn);
+        dataTableFood.getColumns().add(marcaColumn);
+        dataTableFood.getColumns().add(categoryColumn);
+
+
     }
 
     public void atrasApp(ActionEvent event){ //No va para atras directamente sale de la app
