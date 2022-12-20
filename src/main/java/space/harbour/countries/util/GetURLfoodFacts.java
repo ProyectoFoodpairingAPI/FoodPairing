@@ -33,4 +33,17 @@ public abstract class GetURLfoodFacts{
         //json con los parametros de busqueda
         return json;
     }
+    public JsonObject getJsonSearch2(){
+
+        JsonObject json = {
+                "action": "process",
+                "tagtype_0": "categories",
+                "tag_contains_0": "contains",
+                "tag_0": "pizza",
+                "page_size": "20",
+                "json": "1"
+        };
+        //json con los parametros de busqueda
+        return json;
+    }
 }
