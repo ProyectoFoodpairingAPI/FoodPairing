@@ -5,13 +5,18 @@ import javafx.collections.ObservableList;
 import javafx.concurrent.WorkerStateEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import space.harbour.countries.domain.Country;
 import space.harbour.countries.task.DataTask;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -114,4 +119,25 @@ public class CountriesController implements Initializable {
             alert.show();
         }
     }
+
+   /** @FXML
+    public void ventanadosClicked(MouseEvent event){ //Metodo para conectar las dos ventanas
+        if(event.getClickCount() == 2){
+            Country selectedCountry = dataTable.getSelectionModel().getSelectedItem();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/resources/ui/Comida.fxml"));
+            try {
+                Parent root= loader.load();
+                FoodController controller = loader.getController();
+                Scene scene = new Scene(root);
+                Stage stage = new Stage();
+                stage.setScene(scene);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+    } **/
+
+
 }
