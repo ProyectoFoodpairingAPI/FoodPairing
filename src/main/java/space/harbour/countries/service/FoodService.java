@@ -11,15 +11,15 @@ import java.io.IOException;
 import java.util.List;
 
 public class FoodService {
-    private CountriesApiService api;
+    private FoodApiService api;
 
     public FoodService() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(Constants.URL)
+                .baseUrl("https://world.openfoodfacts.org/api/v0/product/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        api = retrofit.create(CountriesApiService.class);
+        api = retrofit.create(FoodApiService.class);
     }
 
     public List<Country> getAllCountries() {
