@@ -12,7 +12,7 @@ public class Country {
     private String subregion;
     private int population;
 
-    public String getName() {
+    public  String getName() {
         return name.getCommon();
     }
 
@@ -20,7 +20,7 @@ public class Country {
         return name.getOfficial();
     }
 
-    public String getRegion() {
+    public  String getRegion() {
         return region;
     }
 
