@@ -1,6 +1,6 @@
 # FoodpairingAPI
 
-Github: https://github.com/ProyectoFoodpairingAPI/FoodpairingAPI
+Github: https://github.com/ProyectoFoodpairingAPI/FoodPairing
 
 RxJava
 -Realiza una aplicación JavaFX que muestre al usuario el listado de paises usando la API REST Countries
