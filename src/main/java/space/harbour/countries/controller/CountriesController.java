@@ -123,7 +123,7 @@ public class CountriesController implements Initializable {
         }
     }
 
-   @FXML
+  /* @FXML
     public void ventanadosClicked(MouseEvent event){ //Metodo para conectar las dos ventanas
         if(event.getClickCount() == 3){
             Country selectedCountry = dataTable.getSelectionModel().getSelectedItem();
@@ -142,7 +142,7 @@ public class CountriesController implements Initializable {
             }
 
         }
-    }
+    }*/
 
 
 }
