@@ -15,6 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import space.harbour.countries.domain.Country;
 import space.harbour.countries.task.DataTask;
+import space.harbour.countries.util.Resources;
 
 import java.io.IOException;
 import java.net.URL;
@@ -111,7 +112,7 @@ public class CountriesController implements Initializable {
         new Thread(dataTask).start();
     }
 
-    @FXML
+    /*@FXML
     public void tableViewMouseClicked(MouseEvent event) {
         if (event.getClickCount() == 2) {
             Country selectedCountry = dataTable.getSelectionModel().getSelectedItem();
@@ -122,9 +123,9 @@ public class CountriesController implements Initializable {
             alert.show();
         }
     }
-
+*/
    @FXML
-    public void ventanadosClicked(MouseEvent event){ //Metodo para conectar las dos ventanas
+    public void tableViewMouseClicked(MouseEvent event){ //Metodo para conectar las dos ventanas
         if(event.getClickCount() == 3){
             Country selectedCountry = dataTable.getSelectionModel().getSelectedItem();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("src/main/resources/ui/Comida.fxml"));
