@@ -53,7 +53,7 @@ public class CountriesController implements Initializable {
         subregionColumn.setCellValueFactory(new PropertyValueFactory<>("subregion"));
         TableColumn<Country, Integer> populationColumn = new TableColumn<>("Population");
         populationColumn.setCellValueFactory(new PropertyValueFactory<>("population"));
-        // TODO Add as many columns as you need
+
 
         dataTable.getColumns().add(nameColumn);
         dataTable.getColumns().add(regionColumn);
