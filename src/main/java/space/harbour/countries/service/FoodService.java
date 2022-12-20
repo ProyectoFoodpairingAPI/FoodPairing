@@ -13,7 +13,7 @@ import java.util.List;
 
 public class FoodService {
     private FoodApiService api;
-    private final RestTemplate restTemplate;
+    //private final RestTemplate restTemplate;
 
     public FoodService() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -47,7 +47,7 @@ public class FoodService {
 
         return null;
     }
-
+/*
     public List<Food> getFoodCategoryRest(String Category) {
         String apiUrl="https://world.openfoodfacts.org/cgi/search.pl?categories_tags_en="+Category;
         try {
@@ -57,7 +57,7 @@ public class FoodService {
         }
 
         return null;
-    }
+    }*/
 
 
 }
