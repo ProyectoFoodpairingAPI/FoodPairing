@@ -12,5 +12,7 @@ public interface FoodApiService {
     @GET("/v3.1/all")
     Call<List<Food>> getAllFood();
 
+    @GET("categories_tags_en={category}")
+    Call<List<Food>> getCategory(@Path("category") String category);
 
 }

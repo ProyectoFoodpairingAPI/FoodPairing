@@ -35,5 +35,17 @@ public class FoodService {
         return null;
     }
 
+    public List<Food> getFoodCategory(String Category) {
+        Call<List<Food>> foodCall = api.getCategory(Category);
+        try {
+            Response<List<Food>> response = foodCall.execute();
+            return response.body();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
+        return null;
+    }
+
 
 }
