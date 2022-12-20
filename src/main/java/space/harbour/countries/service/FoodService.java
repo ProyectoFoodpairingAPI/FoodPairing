@@ -22,6 +22,18 @@ public class FoodService {
         api = retrofit.create(FoodApiService.class);
     }
 
+    public List<Food> getAllProducts() {
+        Call<List<Food>> allProductsCall = api.getAllProducts();
+        try {
+            Response<List<Food>> response = allProductsCall.execute();
+            return response.body();
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+        }
+
+        return null;
+    }
+
     public List<Country> getAllCountries() {
         Call<List<Country>> allCountriesCall = api.getAllCountries();
         try {
