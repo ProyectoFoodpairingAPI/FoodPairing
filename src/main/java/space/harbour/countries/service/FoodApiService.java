@@ -13,7 +13,7 @@ public interface FoodApiService {
     @GET("/v3.1/all")
     Call<List<Food>> getAllFood();
 
-    @GET("categories_tags_en={category}")
+    @GET("categories_tags_en={category}search_simple=1&action=process&json=1")
     Call <JsonObject> getCategory(@Path("category") String category);
 
 }

@@ -20,7 +20,7 @@ public class FoodService {
 
     public FoodService() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://world.openfoodfacts.org/api/v0/product/")
+                .baseUrl("https://world.openfoodfacts.org/cgi/search.pl?")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -39,7 +39,9 @@ public class FoodService {
 
         return null;
     }
-
+    //ejemplo:
+    //https://world.openfoodfacts.org/cgi/search.pl?categories_tags_en=pizza&search_simple=1&action=process&json=1
+    //eso funciona
     public List<Food> getFoodCategory(String Category) {
         Call<JsonObject> foodCall = api.getCategory(Category);
         System.out.println("getFoodCategory:"+foodCall);
