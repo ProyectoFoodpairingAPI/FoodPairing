@@ -40,12 +40,12 @@ public class CountriesController implements Initializable {
 
     private void loadData() {
         statusLabel.setText("Loading data . . .");
-        progressBar.setVisible(true);
+        //progressBar.setVisible(true);
 
         DataTask dataTask = new DataTask();
         dataTask.addEventHandler(WorkerStateEvent.WORKER_STATE_SUCCEEDED, workerStateEvent -> {
             statusLabel.setText("Data loaded!");
-            progressBar.setVisible(false);
+            //progressBar.setVisible(false);
             List<Country> countryList = dataTask.getValue();
             dataTable.setItems(FXCollections.observableArrayList(countryList));
         });
