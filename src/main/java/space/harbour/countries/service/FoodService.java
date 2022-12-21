@@ -1,5 +1,6 @@
 package space.harbour.countries.service;
 
+import com.google.gson.JsonObject;
 import lombok.extern.java.Log;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -40,10 +41,10 @@ public class FoodService {
     }
 
     public List<Food> getFoodCategory(String Category) {
-        Call<List<Food>> foodCall = api.getCategory(Category);
+        Call<JsonObject> foodCall = api.getCategory(Category);
         System.out.println("getFoodCategory:"+foodCall);
         try {
-            Response<List<Food>> response = JSONtoFoodList.getFoodList(foodCall.execute());
+            Response<List<Food>> response = JSONtoFoodList.getFoodList(foodCall.execute().body());
             System.out.println("getFoodCategory:"+response);
             return response.body();
         } catch (IOException ioe) {

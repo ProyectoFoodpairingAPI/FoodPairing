@@ -1,5 +1,6 @@
 package space.harbour.countries.service;
 
+import com.google.gson.JsonObject;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -13,6 +14,6 @@ public interface FoodApiService {
     Call<List<Food>> getAllFood();
 
     @GET("categories_tags_en={category}")
-    Call<List<Food>> getCategory(@Path("category") String category);
+    Call <JsonObject> getCategory(@Path("category") String category);
 
 }
