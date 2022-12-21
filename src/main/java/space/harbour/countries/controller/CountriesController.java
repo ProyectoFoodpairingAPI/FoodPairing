@@ -126,6 +126,7 @@ public class CountriesController implements Initializable {
     */
     @FXML
     public void tableViewMouseClicked(MouseEvent event) { //Metodo para conectar las dos ventanas
+        System.out.println("ClickCountriesController");
         if (event.getClickCount() == 3) {
             Country selectedCountry = dataTable.getSelectionModel().getSelectedItem();
             FXMLLoader loader = new FXMLLoader(Resources.getUI("Comida.fxml"));

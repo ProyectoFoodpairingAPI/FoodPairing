@@ -38,6 +38,7 @@ public class FoodController extends CountriesController implements Initializable
     }
 
     public void init(String name, String region, String subregion, int population, Stage stage, CountriesController countriesController) {
+        System.out.println("FoodController init");
         String nameCountryText = nameCountry.getText();
         nameCountryText=name;
         String regionText= regionCountry.getText();

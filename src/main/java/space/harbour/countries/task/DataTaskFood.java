@@ -22,6 +22,7 @@ public class DataTaskFood extends Task<List<Food>> {
         FoodService foodService= new FoodService();
             System.out.println("FoodService call lanzado");
 
+            //return JSONtoFoodList.getFoodList(foodService.getFoodCategory("pizza"));
             return foodService.getFoodCategory("pizza");
 
     }
