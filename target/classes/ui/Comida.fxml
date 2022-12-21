@@ -18,7 +18,7 @@
                     <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="584.0">
                             <children>
-                                <TableView layoutY="-1.0" prefHeight="359.0" prefWidth="585.0"/>
+                                <TableView fx:id="dataTableFood" layoutY="-1.0" prefHeight="359.0" prefWidth="585.0"/>
                             </children>
                         </AnchorPane>
                     </content>
