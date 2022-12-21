@@ -7,6 +7,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import space.harbour.countries.domain.Country;
 import space.harbour.countries.domain.Food;
+import space.harbour.countries.task.JSONtoFoodList;
 import space.harbour.countries.util.Constants;
 
 import java.io.IOException;
@@ -27,7 +28,7 @@ public class FoodService {
 
     public List<Food> getAllFood() {
         Call<List<Food>> allFoodCall = api.getAllFood();
-        System.out.println(allFoodCall.request().url());
+        System.out.println("allfood:"+allFoodCall.request().url());
         try {
             Response<List<Food>> response = allFoodCall.execute();
             return response.body();
@@ -40,9 +41,10 @@ public class FoodService {
 
     public List<Food> getFoodCategory(String Category) {
         Call<List<Food>> foodCall = api.getCategory(Category);
-        System.out.println(foodCall);
+        System.out.println("getFoodCategory:"+foodCall);
         try {
-            Response<List<Food>> response = foodCall.execute();
+            Response<List<Food>> response = JSONtoFoodList.getFoodList(foodCall.execute());
+            System.out.println("getFoodCategory:"+response);
             return response.body();
         } catch (IOException ioe) {
             ioe.printStackTrace();
