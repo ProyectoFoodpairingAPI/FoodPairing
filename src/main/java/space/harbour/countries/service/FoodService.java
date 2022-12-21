@@ -44,10 +44,12 @@ public class FoodService {
         Call<JsonObject> foodCall = api.getCategory(Category);
         System.out.println("getFoodCategory:"+foodCall);
         try {
-            Response<List<Food>> response = JSONtoFoodList.getFoodList(foodCall.execute().body());
+            //Response<List<Food>> response = JSONtoFoodList.getFoodList(foodCall.execute().body());
+            List<Food> response = JSONtoFoodList.getFoodList(foodCall.execute().body());
             System.out.println("getFoodCategory:"+response);
-            return response.body();
+            return response;
         } catch (IOException ioe) {
+            System.out.println("getFoodCategory:Error");
             ioe.printStackTrace();
         }
 
