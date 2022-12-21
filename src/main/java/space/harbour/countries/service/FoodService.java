@@ -45,6 +45,7 @@ public class FoodService {
         System.out.println("getFoodCategory:"+foodCall);
         try {
             //Response<List<Food>> response = JSONtoFoodList.getFoodList(foodCall.execute().body());
+            System.out.println("getFoodCategory:"+foodCall.execute());
             List<Food> response = JSONtoFoodList.getFoodList(foodCall.execute().body());
             System.out.println("getFoodCategory:"+response);
             return response;

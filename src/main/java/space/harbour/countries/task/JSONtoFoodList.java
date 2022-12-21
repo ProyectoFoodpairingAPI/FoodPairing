@@ -27,6 +27,7 @@ public abstract class JSONtoFoodList {
             foodList.add(comida);
 
         }
+        System.out.println("getFoodList:"+foodList.toString());
         return foodList;
     }
 }
